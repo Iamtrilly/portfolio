@@ -1,4 +1,4 @@
-"use client";
+"use client"; // This line ensures that this module is only executed in the client-side environment
 import React, { useState, useEffect } from "react";
 
 // Components
@@ -11,18 +11,24 @@ const Header = () => {
   // State to track whether the header should be sticky or not
   const [header, setHeader] = useState(false);
 
-  // Get current pathname using window.location.pathname
-  const pathname = window.location.pathname;
-
+  // UseEffect runs only in the client-side environment
   useEffect(() => {
     // Event listener to track scroll position and adjust header appearance
-    const scrollYPos = window.addEventListener("scroll", () => {
+    const handleScroll = () => {
       window.scrollY > 50 ? setHeader(true) : setHeader(false);
-    });
+    };
 
-    // Cleanup function to remove event listener
-    return () => window.removeEventListener("scroll", scrollYPos);
+    // Add event listener when component mounts
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup function to remove event listener when component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []); // Empty dependency array means this effect runs only once after initial render
+
+  // Get current pathname using window.location.pathname
+  const pathname = typeof window !== "undefined" ? window.location.pathname : "";
 
   return (
     <header
@@ -57,3 +63,4 @@ const Header = () => {
 };
 
 export default Header;
+
