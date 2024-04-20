@@ -16,7 +16,7 @@ const projectData = [
   {
     image: "/work/tt.png",
     title: "Teamtrill Media",
-    category: "HTML, CSS, Javascript",
+    category: "HTML, CSS & JS",
     description:
       "A website for a small media company showcasing their work and services.",
     link: "https://teamtrillmedia.netlify.app/",

@@ -121,9 +121,13 @@ const About = () => {
         <div className="flex flex-col xl:flex-row">
           {/* Image */}
           <div className="hidden xl:flex flex-1 relative">
-            <DevImg
-              className="bg-about_shape_light dark:bg-about_shape_dark w-[505px] h-[505px] bg-no-repeat relative"
-              imgSrc="/about/developer.png"
+            <Image
+              src={"/about/memoji.png"}
+              width={568}
+              height={568}
+              alt=""
+              layout="fixed"
+              priority
             />
           </div>
           {/* Tabs */}
@@ -171,7 +175,7 @@ const About = () => {
                       })}
                     </div>
                     {/* Languages */}
-                    <div className="flexflex-col gap-y-2">
+                    <div className="flex flex-col gap-y-2">
                       <div className="text-primary">Language Skill</div>
                       <div className="border-b border-border"></div>
                       <div>English, Kiswahili</div>
@@ -230,7 +234,7 @@ const About = () => {
                       <h4 className="text-xl font-semibold mb-2">
                         Frontend Tools
                       </h4>
-                      <div className="border-b border-border"></div>
+                      <div className="border-b border-border mb-4"></div>
                       {/* Skills List */}
                       <div>
                         {getData(skillData, "skills").data.map(
@@ -253,9 +257,9 @@ const About = () => {
                       <h4 className="text-xl font-semibold mb-2 xl:text-left">
                         Tools
                       </h4>
-                      <div className="border-b border-border"></div>
+                      <div className="border-b border-border "></div>
                       {/* Tool List */}
-                      <div className='flex gap-x-8 justify-center xl:justify-start'>
+                      <div className="flex mt-4 gap-x-8 justify-center xl:justify-start">
                         {getData(skillData, "tools").data.map((item, index) => {
                           const { imgPath } = item;
                           return (
