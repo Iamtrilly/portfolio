@@ -40,6 +40,14 @@ const projectData = [
     link: "https://rickdrivers.com/",
     github: "/",
   },
+  {
+    image: "/work/ziara.png",
+    title: "Horizon Bank App",
+    category: "Next Js, Tailwind CSS, Plaid, React Js",
+    description:"A central banking app that connects different banks together, allowing seamless transactions.",
+    link: "/",
+    github: "https://github.com/Iamtrilly/banking_app",
+  },
 ];
 
 const Work = () => {
@@ -65,10 +73,10 @@ const Work = () => {
               },
             }}
             spaceBetween={30}
-            modules={{ Pagination }}
+            modules={[ Pagination ]}
             pagination={{ clickable: true }}
           >
-            {/* Show only the first 3 projects in the slider */}
+            {/* Show only the first 4 projects in the slider */}
             {projectData.slice(0, 3).map((project, index) => {
               return (
                 <SwiperSlide key={index}>

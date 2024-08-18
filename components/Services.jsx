@@ -10,21 +10,21 @@ import {
 const servicesData = [
   {
     icon: <GanttChartSquare size={72} strokeWidth={0.8} />,
-    title: "Web Design",
+    title: "Web Design & Development",
     description:
-      "Services Lorem, ipsum dolor sit amet consectetur adipisicing elit.Placeat quibusdam sit quam voluptate odit.",
+      "User friendly and mobile responsive webpages built with the latest design trends.",
   },
   {
     icon: <Blocks size={72} strokeWidth={0.8} />,
-    title: "Web Development",
+    title: "Internet & Network Specialist",
     description:
-      "Services Lorem, ipsum dolor sit amet consectetur adipisicing elit.Placeat quibusdam sit quam voluptate odit.",
+      "Installing and configuring network systems. Home and business internet installation.",
   },
   {
     icon: <Gem size={72} strokeWidth={0.8} />,
-    title: "App Development",
+    title: "Digital Creator",
     description:
-      "Services Lorem, ipsum dolor sit amet consectetur adipisicing elit.Placeat quibusdam sit quam voluptate odit.",
+      "Bring your projects to life with stunning photos and videos, professionally shot and edited.",
   },
 ];
 

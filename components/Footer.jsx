@@ -12,6 +12,10 @@ const Footer = () => {
           <div className="text-muted-foreground">
             Copyright &copy; Charles Misheto. All rights reserved.
           </div>
+          {/* Bad pun */}
+          <div className="text-muted-foreground">
+            Made with tears 😭, coffee ☕, and depression. Seriously!
+          </div>
         </div>
       </div>
     </footer>

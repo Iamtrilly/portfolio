@@ -1,5 +1,3 @@
-import { MailIcon, HomeIcon, PhoneCall } from "lucide-react";
-
 import Form from "@/components/Form";
 
 const Contact = () => {
@@ -22,23 +20,6 @@ const Contact = () => {
       {/*Info text & form */}
       <div className='grid xl:grid-cols-2 mb-24 xl:mb-32'>
         {/* info text */}
-        <div className='flex flex-col gap-y-4 mb-12 xl:mb-24 text-base xl:text-lg'>
-          {/* mail */}
-          <div className='flex items-center gap-x-8'>
-            <MailIcon size={18} className='text-primary' />
-            <div>chmisheto@gmail.com</div>
-          </div>
-          {/* address */}
-          <div className='flex items-center gap-x-8'>
-            <HomeIcon size={18} className='text-primary' />
-            <div>Nairobi, Kenya</div>
-          </div>
-          {/* phone */}
-          <div className='flex items-center gap-x-8'>
-            <PhoneCall size={18} className='text-primary' />
-            <div>+254-713-770669</div>
-          </div>
-        </div>
         <Form />
       </div>
     </div>

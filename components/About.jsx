@@ -19,15 +19,15 @@ const infoData = [
   },
   {
     icon: <PhoneCall size="30" />,
-    text: "+254 713 770669",
+    text: "+254 7** *****9",
   },
   {
     icon: <MailIcon size="30" />,
-    text: "chmisheto@gmail.com",
+    text: "*********@gmail.com",
   },
   {
     icon: <Calendar size="30" />,
-    text: "Born 20th Dec, 1998",
+    text: "Born '98",
   },
   {
     icon: <HomeIcon size="30" />,
@@ -63,10 +63,7 @@ const skillData = [
     title: "skills",
     data: [
       {
-        name: "HTML",
-      },
-      {
-        name: "CSS",
+        name: "HTML & CSS",
       },
       {
         name: "JavaScript",
@@ -79,9 +76,6 @@ const skillData = [
       },
       {
         name: "Tailwind CSS",
-      },
-      {
-        name: "Git",
       },
       {
         name: "GitHub",
@@ -107,6 +101,41 @@ const skillData = [
   },
 ];
 
+const hobbiesData = [
+  {
+    title: "other",
+    data: [
+      {
+        name: "Photographer",
+      },
+      {
+        name: "Filmmaker",
+      },
+      {
+        name: "Editor",
+      },
+      {
+        name: "Cybersecurity",
+      },
+      {
+        name: "Content creator",
+      },
+      {
+        name: "Biker",
+      },
+      {
+        name: "Avid reader",
+      },
+      {
+        name: "Gamer",
+      },
+      {
+        name: "Films",
+      },
+    ],
+  },
+];
+
 const About = () => {
   const getData = (arr, title) => {
     return arr.find((item) => item.title === title);
@@ -126,14 +155,13 @@ const About = () => {
               width={568}
               height={568}
               alt=""
-              layout="fixed"
               priority
             />
           </div>
           {/* Tabs */}
           <div className="flex-1">
             <Tabs defaultValue="personal">
-              <TabsList className="w-full grid xl:grid-cols-3 xl:max-w-[528px]">
+              <TabsList className="w-full grid xl:grid-cols-4 xl:max-w-[528px]">
                 <TabsTrigger className="w-[162px] xl:w-auto" value="personal">
                   Personal Info.
                 </TabsTrigger>
@@ -145,6 +173,10 @@ const About = () => {
                 </TabsTrigger>
                 <TabsTrigger className="w-[162px] xl:w-auto" value="skills">
                   Skills
+                </TabsTrigger>
+                
+                <TabsTrigger className="w-[162px] xl:w-auto" value="other skills">
+                  Other skills
                 </TabsTrigger>
               </TabsList>
               {/* Tab Content */}
@@ -274,6 +306,34 @@ const About = () => {
                             </div>
                           );
                         })}
+                      </div>
+                    </div>
+                  </div>
+                </TabsContent>
+                {/* Other Skills */}
+                <TabsContent value="other skills">
+                  <div className="text-center xl:text-left">
+                    <h3 className="h3 mb-8">Hobbies & Other Skills</h3>
+                    <div className="mb-16">
+                      <h4 className="text-xl font-semibold mb-2">
+                        What I do in the shadows
+                      </h4>
+                      <div className="border-b border-border mb-4"></div>
+                      {/* Skills List */}
+                      <div>
+                        {getData(hobbiesData, "other").data.map(
+                          (item, index) => {
+                            const { name } = item;
+                            return (
+                              <div
+                                className="w-2/4 text-center xl:text-left mx-auto xl:mx-0"
+                                key={index}
+                              >
+                                <div className="font-medium">{name}</div>
+                              </div>
+                            );
+                          }
+                        )}
                       </div>
                     </div>
                   </div>

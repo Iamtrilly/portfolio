@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { User, MailIcon, ArrowRightIcon, MessageSquare } from "lucide-react";
+import Link from "next/link";
 
 const Form = () => {
   return <form className='flex flex-col gap-y-4'>
@@ -22,10 +23,13 @@ const Form = () => {
         <Textarea placeholder='Type your message here.'/>
         <MessageSquare className="absolute top-4 right-6" size={20} />
     </div>
+    <Link href="/">
     <Button className='flex items-center gap-x-1 max-w-[166px]'>
         Let's Talk
         <ArrowRightIcon size={20} />
     </Button>
+    </Link>
+    
   </form>;
 };
 
