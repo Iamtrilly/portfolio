@@ -9,7 +9,7 @@ const ProjectCard = ({ project }) => {
     <Card>
       <CardHeader className="p-0">
         {/* Image */}
-        <div className="relative w-full h-[300px] flex items-center justify-center bg-tertiary dark:bg-secondary/40 xl:bg-work_project_bg_light xl:dark:bg-work_project_bg_bg_dark xl:bg-[110%]">
+        <div className="relative w-full h-[300px] flex items-center justify-center bg-tertiary dark:bg-secondary/40 xl:bg-work_project_bg_light xl:dark:bg-work_project_bg_bg_dark xl:bg-[110%] group">
           <Image
             className="absolute bottom-0 shadow-2xl"
             src={project.image}
@@ -21,13 +21,13 @@ const ProjectCard = ({ project }) => {
           {/* Link Buttons */}
           <div className='flex gap-x-4'>
             <Link
-              href= {project.link}
+              href={project.link}
               className="bg-secondary w-[54px] h-[54px] rounded-full flex justify-center items-center scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-200"
             >
               <Link2Icon className="text-black" />
             </Link>
             <Link
-              href= {project.github}
+              href={project.github}
               className="bg-secondary w-[54px] h-[54px] rounded-full flex justify-center items-center scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300"
             >
               <Github className="text-white" />
