@@ -14,7 +14,7 @@ const validUrls = [
 
 const isValidUrl = (url) => {
   try {
-    const parsedUrl = new URL(url, window.location.origin);
+    const parsedUrl = new URL(url, typeof window !== "undefined" ? window.location.origin : "http://localhost");
     return validUrls.includes(parsedUrl.pathname) || url.startsWith('https://');
   } catch (e) {
     return false;
@@ -39,7 +39,10 @@ const ProjectCard = ({ project }) => {
     <Card>
       <CardHeader className="p-0">
         {/* Image */}
-        <div className="relative w-full h-[300px] flex items-center justify-center bg-tertiary dark:bg-secondary/40 xl:bg-work_project_bg_light xl:dark:bg-work_project_bg_bg_dark xl:bg-[110%] group">
+        <div
+          suppressHydrationWarning
+          className="relative w-full h-[300px] flex items-center justify-center bg-tertiary dark:bg-secondary/40 xl:bg-work_project_bg_light xl:dark:bg-work_project_bg_bg_dark xl:bg-[110%] group"
+        >
           <Image
             className="absolute bottom-0 shadow-2xl"
             src={sanitizedImage}
@@ -49,7 +52,7 @@ const ProjectCard = ({ project }) => {
             priority
           />
           {/* Link Buttons */}
-          <div className="flex gap-x-4">
+          <div suppressHydrationWarning className="flex gap-x-4">
             {isValidUrl(project.link) && (
               <Link
                 href={project.link}
