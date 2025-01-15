@@ -36,9 +36,6 @@ const Hero = () => {
                   Contact Me <Send size={18} />
                 </Button>
               </Link>
-              <Button variant="secondary" className="gap-x-2">
-                Download Resume <Download size={18} />
-              </Button>
             </div>
             {/* Socials */}
             <Socials
