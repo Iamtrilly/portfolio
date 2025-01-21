@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { User, MailIcon, ArrowRightIcon, MessageSquare } from "lucide-react";
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 const Form = () => {
   const [formData, setFormData] = useState({

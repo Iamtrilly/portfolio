@@ -12,29 +12,6 @@ import {
   Briefcase,
 } from "lucide-react";
 
-const infoData = [
-  {
-    icon: <User2 size="30" />,
-    text: "Charles Misheto",
-  },
-  {
-    icon: <PhoneCall size="30" />,
-    text: "+254 7** *****9",
-  },
-  {
-    icon: <MailIcon size="30" />,
-    text: "*********@gmail.com",
-  },
-  {
-    icon: <Calendar size="30" />,
-    text: "Born '98",
-  },
-  {
-    icon: <HomeIcon size="30" />,
-    text: "Nairobi, Kenya",
-  },
-];
-
 const qualificationData = [
   {
     title: "experience",
@@ -174,8 +151,11 @@ const About = () => {
                 <TabsTrigger className="w-[162px] xl:w-auto" value="skills">
                   Skills
                 </TabsTrigger>
-                
-                <TabsTrigger className="w-[162px] xl:w-auto" value="other skills">
+
+                <TabsTrigger
+                  className="w-[162px] xl:w-auto"
+                  value="other skills"
+                >
                   Other skills
                 </TabsTrigger>
               </TabsList>
@@ -184,36 +164,24 @@ const About = () => {
                 {/* Personal */}
                 <TabsContent value="personal">
                   <div className="text-center xl:text-left">
-                    <h3 className="h3 mb-4">
-                      Unmatched Service Quality for Over 3 Years
-                    </h3>
+                    <h3 className="h3 mb-4">Get to know me! 🤗</h3>
                     <p className="subtitle max-w-xl max-auto xl:mx-0">
-                      I specialize in crafting intuitive websites with
-                      cutting-edge technology, delivering dynamic and engaging
-                      user experiences.
+                      I’m a Kenyan web developer passionate about creating
+                      beautiful, functional websites. With a solid foundation in
+                      modern front-end technologies, I enjoy solving problems
+                      creatively and collaborating to bring ideas to life.
                     </p>
-                    {/* Icons */}
-                    <div className="grid xl:grid-cols-2 gap-4 mb-12">
-                      {infoData.map((item, index) => {
-                        return (
-                          <div
-                            className="flex items-center gap-x-4 mx-auto xl:mx-0"
-                            key={index}
-                          >
-                            <div className="text-primary">{item.icon}</div>
-                            <div>{item.text}</div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                    {/* Languages */}
-                    <div className="flex flex-col gap-y-2">
-                      <div className="text-primary">Language Skill</div>
-                      <div className="border-b border-border"></div>
-                      <div>English, Kiswahili</div>
-                    </div>
+                    <h3 className="h3 mb-4">Beyond the Screen</h3>
+                    <p className="subtitle max-w-xl max-auto xl:mx-0">
+                      Beyond coding, I capture timeless moments as a
+                      photographer and filmmaker, explore the countryside on
+                      bikes and cars, and unwind with video games. I’m also a
+                      cybersecurity enthusiast and content creator, always eager
+                      to learn and grow.
+                    </p>
                   </div>
                 </TabsContent>
+
                 {/* Qualifications */}
                 <TabsContent value="qualifications">
                   <div>
