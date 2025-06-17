@@ -22,12 +22,12 @@ const Hero = () => {
           {/* Text */}
           <div className="flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center xl:text-left">
             <div className="text-sm uppercase font-semibold mb-4 text-primary tracking-[4px]">
-              Web Developer
+              Web Developer & Creator
             </div>
-            <h1 className="h1 mb-4">Hello, my name is Charles Misheto</h1>
+            <h1 className="h1 mb-4">H! I'm Mishy 😀</h1>
             <p className="subtitle max-w-[490px] mx-auto xl:mx-0">
-              Brief description with insights into myself, my vocational journey
-              and what I engage in professionally.
+              A creator and developer blending tech and visual storytelling to inspire and connect.
+              My goal? To build digital experiences that feel personal, simple, and effective.
             </p>
             {/* Buttons */}
             <div className="flex flex-col gap-y-3 md:flex-row gap-x-3 mx-auto xl:mx-0 mb-12">
