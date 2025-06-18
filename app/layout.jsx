@@ -9,7 +9,7 @@ const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Charles Misheto",
-  description: "Welcome to my online developer portfolio.",
+  description: "Welcome to my online portfolio.",
 };
 
 export default function RootLayout({ children }) {
