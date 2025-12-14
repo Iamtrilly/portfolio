@@ -1,5 +1,6 @@
-"use client"; // This line ensures that this module is only executed in the client-side environment
+"use client";
 import React, { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 // Components
 import Logo from "./Logo";
@@ -10,9 +11,15 @@ import MobileNav from "./MobileNav";
 const Header = () => {
   // State to track whether the header should be sticky or not
   const [header, setHeader] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  
+  // Use Next.js usePathname hook instead of window.location
+  const pathname = usePathname();
 
-  // UseEffect runs only in the client-side environment
   useEffect(() => {
+    // Mark component as mounted
+    setMounted(true);
+    
     // Event listener to track scroll position and adjust header appearance
     const handleScroll = () => {
       window.scrollY > 50 ? setHeader(true) : setHeader(false);
@@ -25,21 +32,29 @@ const Header = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []); // Empty dependency array means this effect runs only once after initial render
+  }, []);
 
-  // Get current pathname using window.location.pathname
-  const pathname = typeof window !== "undefined" ? window.location.pathname : "";
+  // Compute className based on mounted state to avoid hydration mismatch
+  const getHeaderClasses = () => {
+    const baseClasses = "sticky top-0 z-30 transition-all";
+    
+    // Use consistent initial state for SSR and first client render
+    if (!mounted) {
+      return `py-6 dark:bg-transparent ${pathname === '/' ? 'bg-[#fef9f5]' : ''} ${baseClasses}`;
+    }
+    
+    // After hydration, apply scroll-based styles
+    const scrollClasses = header
+      ? 'py-4 bg-white shadow-lg dark:bg-accent'
+      : 'py-6 dark:bg-transparent';
+    
+    const homeClasses = pathname === '/' && !header ? 'bg-[#fef9f5]' : '';
+    
+    return `${scrollClasses} ${homeClasses} ${baseClasses}`;
+  };
 
   return (
-    <header
-      className={`${
-        header
-          ? 'py-4 bg-white shadow-lg dark:bg-accent'
-          : 'py-6 dark:bg-transparent'
-      } sticky top-0 z-30 transition-all ${
-        pathname === '/' && 'bg-[#fef9f5]'
-      }`}
-    >
+    <header className={getHeaderClasses()}>
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
           <Logo />
@@ -63,4 +78,3 @@ const Header = () => {
 };
 
 export default Header;
-
